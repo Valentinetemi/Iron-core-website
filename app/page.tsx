@@ -1,62 +1,139 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Dumbbell, Heart, Users, Zap, Star, Check, Facebook, Instagram, Twitter, Mail, Phone, MapPin, Quote } from 'lucide-react'
-import Image from "next/image"
-import Link from "next/link"
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
+import { CardContent } from "../components/ui/card";
+import { CardDescription } from "../components/ui/card";
+import { CardHeader } from "../components/ui/card";
+import { CardTitle } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Dumbbell } from "lucide-react";
+import  { Heart } from "lucide-react";
+import { Users } from "lucide-react";
+import { Zap } from "lucide-react";
+import { Star } from "lucide-react";
+import {Check } from "lucide-react";
+import { Facebook } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { Twitter } from "lucide-react";
+import { Mail } from "lucide-react";
+import { Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { Quote } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function GymLanding() {
+
+function GymLanding() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white overflow-x-hidden">
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-gray-950/95 backdrop-blur-md border-b border-purple-900/50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+    //Hero section 
+    <div className="
+      min-h-screen
+      text-white
+      overflow-x-hidden"
+      >
+
+      <header className="fixed
+        w-full 
+        z-50
+        bg-transparent
+        ">
+
+        <div className="container 
+        mx-auto 
+        px-4 
+        py-4
+        flex
+         items-center
+        justify-between">
+
+          <div className="flex
+           items-center
+          ">
             <div className="relative">
-              <Dumbbell className="h-10 w-10 text-purple-400" />
-              <div className="absolute inset-0 h-10 w-10 text-purple-400 animate-pulse opacity-50" />
+
+              <Dumbbell className="
+              h-10
+              w-10
+                text-red-600"/>
+              <div className="
+              absolute 
+               h-10 
+               w-10 
+               text-red-600 
+              opacity-50" />
             </div>
-            <span className="text-3xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+
+            <span className="text-3xl
+            font-black
+            text-red-600">
               IRON CORE
             </span>
           </div>
-          <nav className=" hidden md:flex space-x-8">
+
+          {/* the hidden is to hide on mobile then the md:flex is to show nav on desktop*/}
+
+          <nav className="
+          hidden 
+          md: flex
+          space-x-8
+          ">
             {['Home', 'Classes', 'Trainers', 'Pricing', 'Contact'].map((item) => (
               <Link 
                 key={item}
                 href={`#${item.toLowerCase()}`} 
-                className="text-gray-300 hover:text-purple-400 transition-all duration-300 font-semibold relative group"
+                className="text-white
+                hover:text-red-600
+                transition-all 
+                duration-300
+                font-semibold
+                relative"
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </nav>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/placeholder.svg?height=1080&width=1920"
-            alt="Gym Background"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 via-gray-900/80 to-pink-900/90" />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent" />
-        </div>
-        
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+         {/*===home===*/}
+      <section id="home"
+       className="relative
+        h-screen
+         flex
+          items-center
+           justify-center
+            overflow-hidden">
 
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-4">
+        <div className="absolute">
+          <Image
+            src="/Image1.jpg?height=1080&width=1920"
+            alt="Background"
+            fill
+            className="absolute
+            inset-0 
+            object-cover"
+          />
+          <div className="relative">
+            {/* First gradient layer */}
+          <div className="absolute
+          inset-0
+          bg-gradient-to-r from-red-600 via-gray-900" />
+
+          {/* Second gradient layer */}
+
+          <div className="absolute
+          inset-0
+          bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
+          </div>
+        
+        <div className="relative
+         z-10 
+         text-center
+          max-w-6xl
+           mx-auto
+            px-4">
           <div className="mb-8">
+
             <h1 className="text-7xl md:text-9xl font-black mb-6 leading-none">
               <span className="block text-white drop-shadow-2xl">UNLEASH</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 animate-pulse">
@@ -86,6 +163,8 @@ export default function GymLanding() {
             
           </div>
         </div>
+        </div>
+        
       </section>
 
       {/* About Section */}
@@ -439,3 +518,5 @@ export default function GymLanding() {
     </div>
   )
 }
+
+export default GymLanding;
